@@ -49,7 +49,7 @@ export type Hook<T, E extends Env, P extends string> = (
  * ```
  */
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+// oxlint-disable-next-line @typescript-eslint/no-explicit-any
 type ExcludeResponseType<T> = T extends Response & TypedResponse<any> ? never : T
 
 /**

@@ -1,5 +1,5 @@
 import { Hono } from 'hono'
-import { describe, expect, expectTypeOf, it, vi } from 'vitest'
+import { describe, expect, expectTypeOf, it, vi } from 'vite-plus/test'
 import type { StructuredLoggerEnv } from './index'
 import { structuredLogger } from './index'
 

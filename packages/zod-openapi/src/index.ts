@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+/* oxlint-disable @typescript-eslint/no-explicit-any */
 import type {
   RouteConfig as RouteConfigBase,
   ZodContentObject,
@@ -70,7 +70,8 @@ type IsJson<T> = T extends string
 
 type IsForm<T> = T extends string
   ? T extends
-      `multipart/form-data${infer _Rest}` | `application/x-www-form-urlencoded${infer _Rest}`
+      | `multipart/form-data${infer _Rest}`
+      | `application/x-www-form-urlencoded${infer _Rest}`
     ? 'form'
     : never
   : never
@@ -330,12 +331,14 @@ type OpenAPIObjectConfig = Parameters<
 >[0]
 
 export type OpenAPIObjectConfigure<E extends Env, P extends string> =
-  OpenAPIObjectConfig | ((context: Context<E, P>) => OpenAPIObjectConfig)
+  | OpenAPIObjectConfig
+  | ((context: Context<E, P>) => OpenAPIObjectConfig)
 
 export type OpenAPIGeneratorOptions = ConstructorParameters<typeof OpenApiGeneratorV3>[1]
 
 export type OpenAPIGeneratorConfigure<E extends Env, P extends string> =
-  OpenAPIGeneratorOptions | ((context: Context<E, P>) => OpenAPIGeneratorOptions)
+  | OpenAPIGeneratorOptions
+  | ((context: Context<E, P>) => OpenAPIGeneratorOptions)
 
 /**
  * Utility type to convert Hono types to OpenAPIHono types.
@@ -520,7 +523,7 @@ export class OpenAPIHono<
       // If a response type is defined, only the typed response is allowed.
       BoundRouteResponseTypes<R>['handler']
     >,
-    hook: Hook<I, E, P, BoundRouteResponseTypes<R>['handler'] | undefined> | undefined = undefined // eslint-disable-line @typescript-eslint/no-useless-default-assignment
+    hook: Hook<I, E, P, BoundRouteResponseTypes<R>['handler'] | undefined> | undefined = undefined // oxlint-disable-line @typescript-eslint/no-useless-default-assignment
   ): OpenAPIHono<
     E,
     S & ToSchema<R['method'], MergePath<BasePath, P>, I, BoundRouteResponseTypes<R>['output']>,
@@ -590,7 +593,7 @@ export class OpenAPIHono<
           continue
         }
         if (isJSONContentType(mediaType)) {
-          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // oxlint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore we can ignore the type error since Zod Validator's types are not used
           const validator = zValidator('json', schema, effectiveHook as any) as MiddlewareHandler
           if (route.request?.body?.required) {
@@ -609,7 +612,7 @@ export class OpenAPIHono<
           }
         }
         if (isFormContentType(mediaType)) {
-          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // oxlint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore we can ignore the type error since Zod Validator's types are not used
           const validator = zValidator('form', schema, effectiveHook as any) as MiddlewareHandler
           if (route.request?.body?.required) {

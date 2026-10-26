@@ -12,13 +12,13 @@ class MockContext implements ExecutionContext {
   passThroughOnException(): void {
     throw new Error('Method not implemented.')
   }
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  // oxlint-disable-next-line @typescript-eslint/no-explicit-any
   async waitUntil(promise: Promise<any>): Promise<void> {
     await promise
   }
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  // oxlint-disable-next-line @typescript-eslint/no-explicit-any
   props: any
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  // oxlint-disable-next-line @typescript-eslint/no-explicit-any
   tracing: any
 }
 

@@ -1,7 +1,7 @@
 import { Hono } from 'hono'
 import { DEFAULT_OUTPUT_DIR, toSSG } from 'hono/ssg'
 import type { FileSystemModule } from 'hono/ssg'
-import { describe, it, expect, beforeEach, vi } from 'vitest'
+import { describe, it, expect, beforeEach, vi } from 'vite-plus/test'
 import path from 'node:path'
 import { robotsTxtPlugin } from './robots-txt'
 

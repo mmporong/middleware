@@ -9,7 +9,7 @@ import type {
   OAuthTokens,
 } from '@modelcontextprotocol/sdk/shared/auth.js'
 import type { Context } from 'hono'
-import type { Mock } from 'vitest'
+import type { Mock } from 'vite-plus/test'
 import { ProxyOAuthServerProvider } from './proxy-provider.js'
 import type { ProxyOptions } from './proxy-provider.js'
 

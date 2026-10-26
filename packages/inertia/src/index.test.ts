@@ -1,6 +1,6 @@
 import { Hono } from 'hono'
 import type { Context } from 'hono'
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it } from 'vite-plus/test'
 import type { PageObject, ScrollDescriptor } from './index'
 import { deepMerge, defer, inertia, merge, prepend, scroll, serializePage } from './index'
 

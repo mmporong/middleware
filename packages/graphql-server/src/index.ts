@@ -20,13 +20,13 @@ import type {
 import type { Context, Env, Input, MiddlewareHandler } from 'hono'
 import { parseBody } from './parse-body'
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+// oxlint-disable-next-line @typescript-eslint/no-explicit-any
 export type RootResolver<E extends Env = any, P extends string = any, I extends Input = {}> = (
   // eslint-enable-next-line @typescript-eslint/no-explicit-any
   c: Context<E, P, I>
 ) => Promise<unknown> | unknown
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+// oxlint-disable-next-line @typescript-eslint/no-explicit-any
 type Options<E extends Env = any, P extends string = any, I extends Input = {}> = {
   // eslint-enable-next-line @typescript-eslint/no-explicit-any
   schema: GraphQLSchema
@@ -36,7 +36,7 @@ type Options<E extends Env = any, P extends string = any, I extends Input = {}> 
   graphiql?: boolean
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+// oxlint-disable-next-line @typescript-eslint/no-explicit-any
 export const graphqlServer = <E extends Env = any, P extends string = any, I extends Input = {}>(
   // eslint-enable-next-line @typescript-eslint/no-explicit-any
   options: Options<E, P, I>

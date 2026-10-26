@@ -2,7 +2,7 @@ import { newEnforcer } from 'casbin'
 import { Hono } from 'hono'
 import { basicAuth } from 'hono/basic-auth'
 import { jwt, sign } from 'hono/jwt'
-import { describe, it, expect } from 'vitest'
+import { describe, it, expect } from 'vite-plus/test'
 import { basicAuthorizer, jwtAuthorizer } from './helper'
 import { casbin } from '.'
 

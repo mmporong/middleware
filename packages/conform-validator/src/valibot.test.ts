@@ -58,7 +58,7 @@ describe('Validate requests using a Valibot schema', () => {
       }
     }
 
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    // oxlint-disable-next-line @typescript-eslint/no-unused-vars
     type verify = Expect<Equal<Expected, Actual>>
   })
 

@@ -3,7 +3,7 @@ import type { Adapter } from '@auth/core/adapters'
 import Credentials from '@auth/core/providers/credentials'
 import { Hono } from 'hono'
 import { validator } from 'hono/validator'
-import { describe, expect, it, vi } from 'vitest'
+import { describe, expect, it, vi } from 'vite-plus/test'
 import type { AuthConfig } from '.'
 import { authHandler, verifyAuth, initAuthConfig, reqWithEnvUrl } from '.'
 

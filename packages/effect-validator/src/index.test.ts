@@ -64,7 +64,7 @@ describe('Basic', () => {
     }
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  // oxlint-disable-next-line @typescript-eslint/no-unused-vars
   type verify = Expect<Equal<Expected, Actual>>
 
   it('Should return 200 response', async () => {
@@ -140,7 +140,7 @@ describe('coerce', () => {
     }
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  // oxlint-disable-next-line @typescript-eslint/no-unused-vars
   type verify = Expect<Equal<Expected, Actual>>
 
   it('Should return 200 response', async () => {

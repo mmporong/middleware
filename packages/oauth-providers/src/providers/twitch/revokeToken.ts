@@ -24,7 +24,7 @@ export async function revokeToken(client_id: string, token: string): Promise<boo
       if (errorResponse && typeof errorResponse === 'object' && 'message' in errorResponse) {
         throw new HTTPException(400, { message: errorResponse.message })
       }
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      // oxlint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (e) {
       // If parsing fails, throw a generic error with the status
       throw new HTTPException(400, {

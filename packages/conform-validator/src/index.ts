@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+/* oxlint-disable @typescript-eslint/no-explicit-any */
 
 import type { Submission } from '@conform-to/dom'
 import type { Context, Env, Input as HonoInput, MiddlewareHandler, ValidationTargets } from 'hono'

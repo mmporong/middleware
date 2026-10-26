@@ -1,4 +1,4 @@
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+// oxlint-disable-next-line @typescript-eslint/no-explicit-any
 export function toQueryParams(params: { [key: string]: any }): string {
   const elements = Object.keys(params)
 

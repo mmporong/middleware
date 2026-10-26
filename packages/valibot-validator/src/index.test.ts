@@ -443,9 +443,9 @@ describe('Async', () => {
     }
   }
 
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // oxlint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore this is a very complex type test
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  // oxlint-disable-next-line @typescript-eslint/no-unused-vars
   type verify = Expect<Equal<Expected, Actual>>
 
   it('Should return 200 response', async () => {

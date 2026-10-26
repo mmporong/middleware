@@ -1,13 +1,13 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// oxlint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import OriginalRouter from '@medley/router'
 // Should be exported from `hono/router`
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// oxlint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import type { Result, Router } from 'hono/dist/types/router'
 
 export class MedleyRouter<T> implements Router<T> {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  // oxlint-disable-next-line @typescript-eslint/no-explicit-any
   router: any
   name: string = 'MedleyRouter'
 

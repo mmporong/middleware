@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+/* oxlint-disable @typescript-eslint/no-explicit-any */
 import { _deserializeData, _serializeData, _verifySerializable } from '@builder.io/qwik'
 import { setServerPlatform } from '@builder.io/qwik/server'
 import type {

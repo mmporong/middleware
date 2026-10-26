@@ -17,7 +17,7 @@ type BaseProps = {
 }
 
 type ComponentProps = Props &
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  // oxlint-disable-next-line @typescript-eslint/no-explicit-any
   BaseProps & { Layout: React.FC<Record<string, any> & { children: React.ReactElement }> }
 
 const RequestContext = React.createContext<Context | null>(null)
@@ -71,7 +71,7 @@ export const reactRenderer = (
       children: React.ReactElement
     }>
     if (component) {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      // oxlint-disable-next-line @typescript-eslint/no-explicit-any
       c.setLayout((props: any) => {
         return component({ ...props, Layout, c })
       })
@@ -80,7 +80,7 @@ export const reactRenderer = (
     return next()
   }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+// oxlint-disable-next-line @typescript-eslint/no-explicit-any
 export const useRequestContext = <E extends Env = any>(): Context<E> => {
   const c = React.useContext(RequestContext)
   if (!c) {

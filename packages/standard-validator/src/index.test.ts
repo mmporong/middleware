@@ -3,7 +3,7 @@ import { Hono } from 'hono'
 import type { ExtractSchema } from 'hono/types'
 import type { SuccessStatusCode } from 'hono/utils/http-status'
 import type { Equal, Expect, UnionToIntersection } from 'hono/utils/types'
-import { vi } from 'vitest'
+import { vi } from 'vite-plus/test'
 
 import * as arktypeSchemas from '../__schemas__/arktype'
 import * as valibotSchemas from '../__schemas__/valibot'

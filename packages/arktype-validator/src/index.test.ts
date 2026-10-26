@@ -69,7 +69,7 @@ describe('Basic', () => {
     }
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  // oxlint-disable-next-line @typescript-eslint/no-unused-vars
   type verify = Expect<Equal<Expected, Actual>>
 
   it('Should return 200 response', async () => {
@@ -137,7 +137,7 @@ describe('With Hook', () => {
     '/post',
     arktypeValidator('json', schema, (result, c) => {
       if (!result.success) {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        // oxlint-disable-next-line @typescript-eslint/no-explicit-any
         return c.text(`${(result.data as any).id} is invalid!`, 400)
       }
       const data = result.data

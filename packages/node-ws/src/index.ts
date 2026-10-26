@@ -20,7 +20,7 @@ export interface NodeWebSocket {
   wss: WebSocketServer
 }
 export interface NodeWebSocketInit {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  // oxlint-disable-next-line @typescript-eslint/no-explicit-any
   app: Hono<any, any, any>
   baseUrl?: string | URL
 }

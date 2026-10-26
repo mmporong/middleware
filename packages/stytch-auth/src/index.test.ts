@@ -1,25 +1,24 @@
 import { Hono } from 'hono'
 import { getCookie } from 'hono/cookie'
 import { HTTPException } from 'hono/http-exception'
-import type { Mock } from 'vitest'
 import { Consumer, B2B } from '.'
 
 type sessionMock = {
-  authenticate: Mock
-  authenticateJwt: Mock
+  authenticate: ReturnType<typeof vi.fn>
+  authenticateJwt: ReturnType<typeof vi.fn>
 }
 
 type oauthMock = {
-  introspectTokenLocal: Mock
+  introspectTokenLocal: ReturnType<typeof vi.fn>
 }
 
 type b2bSessionMock = {
-  authenticate: Mock
-  authenticateJwt: Mock
+  authenticate: ReturnType<typeof vi.fn>
+  authenticateJwt: ReturnType<typeof vi.fn>
 }
 
 type b2bIdpMock = {
-  introspectTokenLocal: Mock
+  introspectTokenLocal: ReturnType<typeof vi.fn>
 }
 
 vi.mock(import('stytch'), async (importOriginal) => {
@@ -45,7 +44,7 @@ vi.mock(import('stytch'), async (importOriginal) => {
 
   // Forcing the mocked class constructor to be a real type causes tsc to crash
   // e.g. same error as https://github.com/microsoft/TypeScript/issues/52952 but probably different bug
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  // oxlint-disable-next-line @typescript-eslint/no-explicit-any
   const ConsumerClient: any = vi.fn(function (this: any, { project_id, secret, custom_base_url }) {
     this.project_id = project_id
     this.secret = secret
@@ -56,7 +55,7 @@ vi.mock(import('stytch'), async (importOriginal) => {
 
   // Forcing the mocked class constructor to be a real type causes tsc to crash
   // e.g. same error as https://github.com/microsoft/TypeScript/issues/52952 but probably different bug
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  // oxlint-disable-next-line @typescript-eslint/no-explicit-any
   const B2BClientMock: any = vi.fn(function (this: any, { project_id, secret, custom_base_url }) {
     this.project_id = project_id
     this.secret = secret
@@ -87,7 +86,7 @@ describe('Consumer', () => {
 
       const req = new Request('http://localhost/')
       app.get('/', (ctx) => {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        // oxlint-disable-next-line @typescript-eslint/no-explicit-any
         const client = Consumer.getClient(ctx) as any
         return ctx.json({
           project_id: client.project_id,
@@ -504,7 +503,7 @@ describe('B2B', () => {
 
       const req = new Request('http://localhost/')
       app.get('/', (ctx) => {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        // oxlint-disable-next-line @typescript-eslint/no-explicit-any
         const client = B2B.getClient(ctx) as any
         return ctx.json({
           project_id: client.project_id,

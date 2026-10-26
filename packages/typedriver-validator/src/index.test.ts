@@ -34,7 +34,7 @@ describe('Type Inference', () => {
   // ----------------------------------------------------------------
   it('With TypeScript', () => {
     const app = new Hono()
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    // oxlint-disable-next-line @typescript-eslint/no-unused-vars
     const route = app.post(
       '/vector3',
       tdValidator(
@@ -59,7 +59,7 @@ describe('Type Inference', () => {
       y: number
       z: number
     }>
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    // oxlint-disable-next-line @typescript-eslint/no-unused-vars
     type C = Expect<Equal<A, B>>
   })
   // ----------------------------------------------------------------
@@ -67,7 +67,7 @@ describe('Type Inference', () => {
   // ----------------------------------------------------------------
   it('With Json Schema', () => {
     const app = new Hono()
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    // oxlint-disable-next-line @typescript-eslint/no-unused-vars
     const route = app.post(
       '/vector3',
       tdValidator('json', {
@@ -93,7 +93,7 @@ describe('Type Inference', () => {
       y: number
       z: number
     }>
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    // oxlint-disable-next-line @typescript-eslint/no-unused-vars
     type C = Expect<Equal<A, B>>
   })
   // ----------------------------------------------------------------
@@ -101,7 +101,7 @@ describe('Type Inference', () => {
   // ----------------------------------------------------------------
   it('With TypeBox', () => {
     const app = new Hono()
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    // oxlint-disable-next-line @typescript-eslint/no-unused-vars
     const route = app.post(
       '/vector3',
       tdValidator(
@@ -126,7 +126,7 @@ describe('Type Inference', () => {
       y: number
       z: number
     }>
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    // oxlint-disable-next-line @typescript-eslint/no-unused-vars
     type C = Expect<Equal<A, B>>
   })
   // ----------------------------------------------------------------
@@ -134,7 +134,7 @@ describe('Type Inference', () => {
   // ----------------------------------------------------------------
   it('With Zod', () => {
     const app = new Hono()
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    // oxlint-disable-next-line @typescript-eslint/no-unused-vars
     const route = app.post(
       '/vector3',
       tdValidator(
@@ -159,7 +159,7 @@ describe('Type Inference', () => {
       y: number
       z: number
     }>
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    // oxlint-disable-next-line @typescript-eslint/no-unused-vars
     type C = Expect<Equal<A, B>>
   })
   // ----------------------------------------------------------------
@@ -167,7 +167,7 @@ describe('Type Inference', () => {
   // ----------------------------------------------------------------
   it('With Valibot', () => {
     const app = new Hono()
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    // oxlint-disable-next-line @typescript-eslint/no-unused-vars
     const route = app.post(
       '/vector3',
       tdValidator(
@@ -192,7 +192,7 @@ describe('Type Inference', () => {
       y: number
       z: number
     }>
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    // oxlint-disable-next-line @typescript-eslint/no-unused-vars
     type C = Expect<Equal<A, B>>
   })
   // ----------------------------------------------------------------
@@ -200,7 +200,7 @@ describe('Type Inference', () => {
   // ----------------------------------------------------------------
   it('With ArkType', () => {
     const app = new Hono()
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    // oxlint-disable-next-line @typescript-eslint/no-unused-vars
     const route = app.post(
       '/vector3',
       tdValidator(
@@ -225,7 +225,7 @@ describe('Type Inference', () => {
       y: number
       z: number
     }>
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    // oxlint-disable-next-line @typescript-eslint/no-unused-vars
     type C = Expect<Equal<A, B>>
   })
   // ----------------------------------------------------------------
@@ -241,7 +241,7 @@ describe('Type Inference', () => {
       },
       required: ['name', 'age'],
     }
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    // oxlint-disable-next-line @typescript-eslint/no-unused-vars
     const route = app.post('/vector3', tdValidator('json', schema), (c) => {
       return c.json({
         success: true as boolean, // no-narrow
@@ -249,7 +249,7 @@ describe('Type Inference', () => {
       })
     })
     type Actual = ExtractSchema<typeof route>
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    // oxlint-disable-next-line @typescript-eslint/no-unused-vars
     type Result = Expect<Equal<Actual, ExpectedJson<unknown>>>
   })
 })

@@ -1,4 +1,4 @@
-import { describe, expect, expectTypeOf, it, vi } from 'vitest'
+import { describe, expect, expectTypeOf, it, vi } from 'vite-plus/test'
 import { z as z3 } from 'zod/v3'
 import { z as z4 } from 'zod/v4'
 import { z as z4m } from 'zod/v4-mini'

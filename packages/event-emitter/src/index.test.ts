@@ -1,6 +1,6 @@
 import { Hono } from 'hono'
 import type { Context } from 'hono'
-import { describe, expect, it, vi } from 'vitest'
+import { describe, expect, it, vi } from 'vite-plus/test'
 import { createEmitter, defineHandler, defineHandlers, emitter } from './index'
 import type { Emitter } from './index' // Adjust the import path as needed
 

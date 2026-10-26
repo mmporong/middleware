@@ -72,7 +72,7 @@ export type Hook<T, E extends Env, P extends string, O = {}> = (
   c: Context<E, P>
 ) => Response | Promise<Response> | void | Promise<Response | void> | TypedResponse<O>
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+// oxlint-disable-next-line @typescript-eslint/no-explicit-any
 export type Validation<O = any> = (input: unknown) => IValidation<O>
 export type OutputType<T> = T extends Validation<infer O> ? O : never
 

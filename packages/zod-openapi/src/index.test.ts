@@ -5,7 +5,7 @@ import { bearerAuth } from 'hono/bearer-auth'
 import { hc } from 'hono/client'
 import type { ServerErrorStatusCode, StatusCode } from 'hono/utils/http-status'
 import type { JSONValue } from 'hono/utils/types'
-import { describe, expect, expectTypeOf, it, vi } from 'vitest'
+import { describe, expect, expectTypeOf, it, vi } from 'vite-plus/test'
 import { stringify } from 'yaml'
 import type { RouteConfigToTypedResponse } from './index'
 import { $, OpenAPIHono, createRoute, defineOpenAPIRoute, z } from './index'
@@ -26,7 +26,7 @@ describe('Constructor', () => {
     const app = new OpenAPIHono<FakeEnv>({
       defaultHook: (_result, c) => {
         // Make sure we're passing context types through
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        // oxlint-disable-next-line @typescript-eslint/no-explicit-any
         expectTypeOf(c).toMatchTypeOf<Context<FakeEnv, any, any>>()
       },
     })

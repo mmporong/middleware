@@ -43,7 +43,7 @@ export type InertiaSharedEnv<V> = {
 
 type RegisteredApp = AppRegistry extends { app: infer A } ? A : never
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+// oxlint-disable-next-line @typescript-eslint/no-explicit-any
 type AppEnv<App> = App extends HonoBase<infer E, any, any, any> ? E : never
 
 type SharedProps<App> =

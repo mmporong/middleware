@@ -1,5 +1,5 @@
 import { Hono } from 'hono'
-import { describe, it, expect } from 'vitest'
+import { describe, it, expect } from 'vite-plus/test'
 import { esbuildTranspiler } from './node'
 
 const TS = 'function add(a: number, b: number) { return a + b; }'

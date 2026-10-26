@@ -34,7 +34,7 @@ describe('Inference', () => {
       name: Type.String(),
       age: Type.Number(),
     })
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    // oxlint-disable-next-line @typescript-eslint/no-unused-vars
     const route = app.post('/author', tbValidator('json', schema), (c) => {
       const data = c.req.valid('json')
       return c.json({
@@ -43,7 +43,7 @@ describe('Inference', () => {
       })
     })
     type Actual = ExtractSchema<typeof route>
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    // oxlint-disable-next-line @typescript-eslint/no-unused-vars
     type Result = Expect<
       Equal<
         Actual,
@@ -67,7 +67,7 @@ describe('Inference', () => {
       },
       required: ['name', 'age'],
     } as const
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    // oxlint-disable-next-line @typescript-eslint/no-unused-vars
     const route = app.post('/author', tbValidator('json', schema), (c) => {
       const data = c.req.valid('json')
       return c.json({
@@ -76,7 +76,7 @@ describe('Inference', () => {
       })
     })
     type Actual = ExtractSchema<typeof route>
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    // oxlint-disable-next-line @typescript-eslint/no-unused-vars
     type Result = Expect<
       Equal<
         Actual,
@@ -89,7 +89,7 @@ describe('Inference', () => {
   })
   it('With Json Schema (Infer Const Generics)', () => {
     const app = new Hono()
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    // oxlint-disable-next-line @typescript-eslint/no-unused-vars
     const route = app.post(
       '/author',
       tbValidator('json', {
@@ -109,7 +109,7 @@ describe('Inference', () => {
       }
     )
     type Actual = ExtractSchema<typeof route>
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    // oxlint-disable-next-line @typescript-eslint/no-unused-vars
     type Result = Expect<
       Equal<
         Actual,
@@ -130,7 +130,7 @@ describe('Inference', () => {
       },
       required: ['name', 'age'],
     }
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    // oxlint-disable-next-line @typescript-eslint/no-unused-vars
     const route = app.post('/author', tbValidator('json', schema), (c) => {
       return c.json({
         success: true as boolean, // no-narrow
@@ -138,7 +138,7 @@ describe('Inference', () => {
       })
     })
     type Actual = ExtractSchema<typeof route>
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    // oxlint-disable-next-line @typescript-eslint/no-unused-vars
     type Result = Expect<Equal<Actual, ExpectedJson<unknown>>>
   })
 })

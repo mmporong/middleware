@@ -3,7 +3,7 @@ import type { MiddlewareHandler } from 'hono'
 import type { ExtractSchema } from 'hono/types'
 import type { ContentfulStatusCode } from 'hono/utils/http-status'
 import type { Equal, Expect } from 'hono/utils/types'
-import { vi } from 'vitest'
+import { vi } from 'vite-plus/test'
 import { z } from 'zod/v3'
 import { zValidator } from '.'
 
@@ -78,7 +78,7 @@ describe('Basic', () => {
     }
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  // oxlint-disable-next-line @typescript-eslint/no-unused-vars
   type verify = Expect<Equal<Expected, Actual>>
 
   it('Should be assignable to a generic MiddlewareHandler', () => {
@@ -164,7 +164,7 @@ describe('coerce', () => {
     }
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  // oxlint-disable-next-line @typescript-eslint/no-unused-vars
   type verify = Expect<Equal<Expected, Actual>>
 
   it('Should return 200 response', async () => {
@@ -217,7 +217,7 @@ describe('coerce', () => {
       }
     }
 
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    // oxlint-disable-next-line @typescript-eslint/no-unused-vars
     type verifyMixed = Expect<Equal<MixedExpected, MixedActual>>
   })
 })
@@ -274,7 +274,7 @@ describe('With Hook', () => {
     }
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  // oxlint-disable-next-line @typescript-eslint/no-unused-vars
   type verify = Expect<Equal<Expected, Actual>>
 
   it('Should be assignable to a generic MiddlewareHandler', () => {
@@ -596,7 +596,7 @@ describe('With options + validationFunction', () => {
         outputFormat: 'json'
         status: 400
       }
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  // oxlint-disable-next-line @typescript-eslint/no-unused-vars
   type verify = Expect<Equal<Expected, Actual>>
 
   it('Should be ok due to passthrough schema', async () => {
